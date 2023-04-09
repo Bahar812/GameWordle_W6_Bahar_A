@@ -31,40 +31,12 @@ namespace GameWordle
 
         private Random acak = new Random();
         private Button[,] tebakKata = new Button[inputanUser, 5];
-       public static string path = File.ReadAllText(@"E:\Bahar Project C#\GameWordle\Wordle Word List.txt", Encoding.UTF8);
+       public static string path = File.ReadAllText("Wordle Word List.txt");
         string[] liststring = path.Split(',');
 
         private void FormGame_Load(object sender, EventArgs e)
         {
-            //button_a.Tag = "a";
-            //button_b.Tag = "b";
-            //button_c.Tag = "c";
-            //button_d.Tag = "d";
-            //button_e.Tag = "e";
-            //button_f.Tag = "f";
-            //button_g.Tag = "g";
-            //button_h.Tag = "h";
-            //button_i.Tag = "i";
-            //button_j.Tag = "j";
-            //button_k.Tag = "k";
-            //button_l.Tag = "l";
-            //button_m.Tag = "m";
-            //button_n.Tag = "n";
-            //button_o.Tag = "o";
-            //button_p.Tag = "p";
-            //button_q.Tag = "q";
-            //button_r.Tag = "r";
-            //button_s.Tag = "s";
-            //button_t.Tag = "t";
-            //button_u.Tag = "u";
-            //button_v.Tag = "v";
-            //button_w.Tag = "w";
-            //button_x.Tag = "x";
-            //button_y.Tag = "y";
-            //button_z.Tag = "z";
-
             
-
             int num = acak.Next(0,liststring.Length);
             kataRandom = liststring[num];
             //MessageBox.Show(kataRandom);
