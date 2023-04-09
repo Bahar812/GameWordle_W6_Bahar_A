@@ -16,7 +16,8 @@ namespace GameWordle
         public static int inputanUser;
         string tebakanUser = "";
        public string kataRandom;
-        string wadahTebakan;
+        public string wadahTebakan;
+        //string wadahTebakan;
         int counterRow = 0;
         int counterCol = 0;
         int tebakanBenar = 0;
@@ -66,7 +67,7 @@ namespace GameWordle
 
             int num = acak.Next(0,liststring.Length);
             kataRandom = liststring[num];
-            MessageBox.Show(kataRandom);
+            //MessageBox.Show(kataRandom);
           
           
             for (int i = 0; i < inputanUser; i++)
@@ -237,7 +238,7 @@ namespace GameWordle
                 {
                     counterRow--;
                     tebakanUser = tebakanUser.Substring(0, counterRow);
-                    wadahTebakan = tebakanUser;
+                    //wadahTebakan = tebakanUser;
                     tebakKata[counterCol, counterRow].Text = "";
 
                 }
@@ -313,8 +314,38 @@ namespace GameWordle
             {
                 if(tebakKata[counterCol, 0].Text != "")
                 {
+                   
+                    for(int j = 0; j < 5; j++)
+                        {
+                            for (int i = 0; i < 5; i++)
+                            {
+                                
+                                if (tebakanUser[i] == wadahTebakan[j])
+                                {
+                                    multipleWord++;
+                                }
+                            ///MessageBox.Show(tebakanUser[i].ToString() + " ini " + wadahTebakan[j] + " kata yang sama " + multipleWord.ToString());
+                        }
+                            if(multipleWord >= 3)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            multipleWord = 0;
+                        }
+                            
+                        }
+                        
+                    if(multipleWord >= 3)
+                    {
+                        MessageBox.Show("word is multiple character please input again");
+                        multipleWord = 0;
+                    }
+
                     if (!liststring.Contains<string>(tebakanUser.ToLower()))
                     {
+                        multipleWord = 0;
                         MessageBox.Show(string.Concat("Kata ", tebakanUser, " gaada ya ajg"));
                         int simpan = counterRow;
                         for (int i = 0; i < simpan; i++)
@@ -354,7 +385,7 @@ namespace GameWordle
                         {
                             counterRow--;
                             tebakanUser = tebakanUser.Substring(0, counterRow);
-                            wadahTebakan = tebakanUser;
+                            
                             tebakKata[counterCol, counterRow].Text = "";
 
                         }
@@ -407,6 +438,11 @@ namespace GameWordle
               
             }
            
+        }
+
+        private void buttonAnswer_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(kataRandom);
         }
     }
 }

@@ -56,6 +56,7 @@
             this.button_m = new System.Windows.Forms.Button();
             this.button_enter = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.buttonAnswer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_q
@@ -393,11 +394,22 @@
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
+            // buttonAnswer
+            // 
+            this.buttonAnswer.Location = new System.Drawing.Point(652, 48);
+            this.buttonAnswer.Name = "buttonAnswer";
+            this.buttonAnswer.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnswer.TabIndex = 28;
+            this.buttonAnswer.Text = "Jawaban";
+            this.buttonAnswer.UseVisualStyleBackColor = true;
+            this.buttonAnswer.Click += new System.EventHandler(this.buttonAnswer_Click);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAnswer);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_enter);
             this.Controls.Add(this.button_m);
@@ -465,5 +477,6 @@
         private System.Windows.Forms.Button button_m;
         private System.Windows.Forms.Button button_enter;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.Button buttonAnswer;
     }
 }

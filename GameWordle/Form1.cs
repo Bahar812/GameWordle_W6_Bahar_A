@@ -27,18 +27,26 @@ namespace GameWordle
 
         private void buttonMulai_Click(object sender, EventArgs e)
         {
-            inputanUser = Convert.ToInt32(textBoxTebakBerapa.Text);
-            if(inputanUser >= 3)
+            if(textBoxTebakBerapa.Text != "")
             {
-                FormGame.inputanUser = inputanUser;
-                FormGame frm = new FormGame();
-                frm.ShowDialog();
+                inputanUser = Convert.ToInt32(textBoxTebakBerapa.Text);
+                if (inputanUser >= 3)
+                {
+                    FormGame.inputanUser = inputanUser;
+                    FormGame frm = new FormGame();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Angka tidak boleh kurang dari 3");
+                    textBoxTebakBerapa.Text = "";
+                }
             }
             else
             {
-                MessageBox.Show("Angka tidak boleh kurang dari 3");
-                textBoxTebakBerapa.Text = "";
+                MessageBox.Show("gaboleh kosong yaa");
             }
+           
             
             
             
